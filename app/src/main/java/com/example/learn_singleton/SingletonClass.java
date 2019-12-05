@@ -18,9 +18,7 @@ class SingletonClass {
                 //if there is no instance available... create new one
                 if (instance == null) instance = new SingletonClass();
             }
-            //  instance = new LazyInitializedSingletonExample();
         }
-
         return instance;
     }
 }
