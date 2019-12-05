@@ -1,2 +1,2 @@
 # perfect-singleton-java-android
-Make a perfect singleton in java that is refection, thread, serialization, cloneable safe
+Make a perfect singleton in java that is reflection, thread, serialization, cloneable safe
