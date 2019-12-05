@@ -1,6 +1,10 @@
 package com.example.learn_singleton;
 
-class SingletonClass {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+class SingletonClass implements Serializable, Cloneable {
     private static volatile SingletonClass instance;
 
     //private constructor.
@@ -18,9 +22,19 @@ class SingletonClass {
                 //if there is no instance available... create new one
                 if (instance == null) instance = new SingletonClass();
             }
-            //  instance = new LazyInitializedSingletonExample();
         }
+        return instance;
+    }
 
+    //Make singleton from serialize and deserialize operation.
+    protected Object readResolve() {
+        return getInstance();
+    }
+
+    //Singleton safe from clone
+    @NonNull
+    @Override
+    protected Object clone() {
         return instance;
     }
 }
